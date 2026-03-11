@@ -23,10 +23,9 @@ export default function Ordenes() {
   console.log(data?.data);
   console.log(error);
   console.log(isLoading);
-  
 
   return (
-    <div>
+    <div className='p-5'>
           <h1 className="text-4xl font-black">Ordenes</h1>
           <p className="text-2xl my-10">Administra las ordenes de tus clientes desde aquí.</p>
 

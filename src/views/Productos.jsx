@@ -10,43 +10,37 @@ import Producto from '../components/Producto'
 export default function Productos() {
 
 
-const token=localStorage.getItem('AUTH_TOKEN')
-const fetcher = () => clienteAxios('/api/productos',{
-  headers:{
-    Authorization: `Bearer ${token}`
+  const token = localStorage.getItem('AUTH_TOKEN')
+  const fetcher = () => clienteAxios('/api/productos', {
+    headers: {
+      Authorization: `Bearer ${token}`
     }
-}).then(datos => datos.data)
+  }).then(datos => datos.data)
 
-const {data, error, isLoading}= useSWR('/api/productos', fetcher,
-  {refreshInterval:1000}
- )
- if(isLoading)return 'cargando...'
- console.log(data.data);
- 
+  const { data, error, isLoading } = useSWR('/api/productos', fetcher,
+    { refreshInterval: 1000 }
+  )
+  if (isLoading) return 'cargando...'
+  console.log(data.data);
 
-
-  return (  
-    <div>
-        <h1 className="text-4xl font-black">Productos</h1>
-        <p className="text-2xl my-10">Maneja la disponibilidad de tus productos desde aquí</p>
-
-
-
-
+  return (
+    <div className='p-5'>
+      <h1 className="text-4xl font-black">Productos</h1>
+      <p className="text-2xl my-10">Maneja la disponibilidad de tus productos desde aquí</p>
 
       <div className="grid gap-4 grid-cols-2 md:grid-cols-2 xl:grid-cols-3">
         {
-       
-          data.data.map(producto =>(
+
+          data.data.map(producto => (
             <Producto
-            key={producto.imagen}
-            producto={producto}
-            botonDisponible={true}
+              key={producto.imagen}
+              producto={producto}
+              botonDisponible={true}
             />
-          ) )
-  
-        
-     
+          ))
+
+
+
         }
       </div>
     </div>

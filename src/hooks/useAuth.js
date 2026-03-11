@@ -46,12 +46,18 @@ export const useAuth=({middleware, url})=>{
     const registro = async (datos, setErrores)=>{
 
     try {
+        
+        
         const {data} = await clienteAxios.post('/api/registro', datos);
+        console.log(import.meta.env.VITE_API_URL);
+        
         localStorage.setItem('AUTH_TOKEN', data.token);
         setErrores([]);
         await mutate()
         // mi token de usuario 4|i6qj5K5mC4lgD1ETqWkd1Z0B5aIRphYyGhqNzfnR01db8bf0
       } catch (error) {
+        console.log(error);
+        
         setErrores(Object.values(error.response.data.errors) );
         
       }
