@@ -12,6 +12,7 @@ Aplicación web para realizar pedidos en un quiosco de comida.
 - https://github.com/Luismy-182/fresh-coffee-backend
 
 ## ⚙️ Instalación
+```bash
 - npm install
 - npm run dev
 
