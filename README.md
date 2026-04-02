@@ -21,5 +21,6 @@ Aplicación web para realizar pedidos en un quiosco de comida.
 ```bash
 - npm install
 - npm run dev
+- renombrar env.example a .env y colocar la url de freshcoffe backend
 
 
