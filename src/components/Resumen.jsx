@@ -26,7 +26,7 @@ export default function Resumen() {
     <div className="py-10">
       {pedido.length ===0 ? (
         <p className="text-center text-2xl">
-          No hay elementos aun
+          No hay elementos aún
         </p>
 
       ) :(
